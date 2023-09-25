@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" , href="assets/style.css" />
+    <link rel="stylesheet" type="text/css" , href="responsive.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Music Player -> With Love By ...Shamik</title>
+</head>
+
+<body>
+    <!----==Notification==---->
+    <div class="notificationBox">
+        <div class="content">
+            <p class="notificationText">Made with <i class="fa fa-heart-o"></i> By Shamik</p>
+        </div>
+    </div>
+
+    <!-- <div class="startup_animation">
+        <img src="assets/startup-img.png">
+    </div> -->
+
+    <!----Head Section--->
+    <div class="head">
+        <h1 class="head_title">Music Player</h1>
+    </div>
+
+    <div class="tabs">
+        <div class="tab_itms">
+            <div class="itm btn_tab tab_active" data-filter="*"><span class="tab_label">Songs</span></div>
+            <!-- <div class="itm btn_tab" data-filter="Artists"><span class="tab_label">Artists</span></div>
+            <div class="itm btn_tab" data-filter="Albums"><span class="tab_label">Albums</span></div> -->
+        </div>
+    </div>
+    <!----/Head Section--->
+
+    <div class="tab tab_default_list">
+        <div class="music_list">
+            <div class="list_itms">
+
+                <!-- <div class="list_child">
+                    <div class="child_details">
+                        <div class="detail music_title">Marshmello Alone</div>
+                        <div class="detail child_icon" style="visibility: hidden;opacity: 0;"><i class="fa fa-play"></i></div>
+                        <div class="detail music_artist">Unknown Artist</div>
+                        <div class="detail music_album">Unknown Album</div>
+                        <div class="detail music_duration">Unknown</div>
+                        <audio src="assets/Musics/Marshmello_-_Alone.mp3"></audio>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+    <div class="tab tab_artists">Shamik</div>
+    <div class="tab tab_albums">dedfe</div>
+
+    <!-------------Music Control Box-------------->
+    <div class="control_box">
+
+        <div class="col col_music_details">
+            <div class="col_itms">
+                <div class="cover_pic">
+                    <img src="assets/icon.png">
+                </div>
+                <div class="music_title">
+                    <p class="title"></p>
+                    <p class="artist"></p>
+                    <p class="album"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col_controls">
+            <div class="col_itms">
+
+                <div class="control_btns">
+                    <button class="btn_ctrl control_btn btn_extra btn_random"><i class="fa fa-random"></i></button>
+                    <button class="btn_ctrl  control_btn btn_prev"><i class="fa fa-step-backward"></i> </button>
+                    <button class="btn_ctrl  control_btn btn_pause" onclick="playPause()"><i class="fa fa-play"></i></button>
+                    <button class="btn_ctrl  control_btn btn_next"><i class="fa fa-step-forward"></i></button>
+                    <button class="btn_ctrl control_btn btn_extra btn_repeat"><i class="fa fa-retweet"></i></button>
+
+                    <button class=" btn_options" style="display: none;" onclick="toggleOptions()"><i class="fa fa-ellipsis-h"></i></button>
+                </div>
+
+                <div class="duration_box">
+                    <div class="music_duration">
+                        <span class="time_left">00:00</span><input id="timeSlider" type="range" min="0" max="100"
+                            class="duration_bar timeSlider" value="0" />
+                        <span class="duration">00:00</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col col_volumeControl">
+            <div class="col_itms">
+
+                <div class="volumeController">
+                    <span class="vol_icon"><i class="fa fa-volume-up"></i></span>
+                    <input type="range" value="100" min="0" max="100" />
+
+                    <button class=" btn_options" onclick="toggleOptions()"><i class="fa fa-ellipsis-h"></i></button>
+                    <div class="options">
+                        <ul class="options_list" type="none">
+                            <li class="option_itm" data-filter="fullScreen"><i class="fa fa-arrows-alt"></i> Switch to full screen</li>
+                            <li class="option_itm" data-filter="mute"><i class="fa fa-volume-off"></i> Mute/Unmute</li>
+                            <li class="option_itm" data-filter="replay"><i class="fa fa-retweet"></i> Replay this song</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--Full screen-->
+    <div class="fullScreen_player">
+        <div class="player_content">
+            <div class="play_bar">
+
+                <div class="row">
+                    <div class="cover_pic">
+                        <img src="assets/icon.png">
+                    </div>
+                    <div class="music_title">
+                        <p class="title"></p>
+                        <p class="artist"></p> -
+                        <p class="album"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="duration_bar">
+                        <div class="music_duration">
+                            <span class="time_left">00:00</span><input class="timeSlider" type="range" min="0" max="100"
+                                class="duration_bar" value="0" />
+                            <span class="duration">00:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="fs_btns">
+                        <button class=" fs_control_btn btn_ctrl btn_prev"> <i class="fa fa-step-backward"></i> </button>
+                        <button class=" fs_control_btn btn_ctrl btn_pause"><i class="fa fa-play"></i></button>
+                        <button class=" fs_control_btn btn_ctrl btn_next"><i class="fa fa-step-forward"></i></button>
+                        <button class="fs_control_btn btn_ctrl btn_extra btn_random"><i class="fa fa-random"></i></button>
+                        <button class="fs_control_btn btn_ctrl btn_extra btn_repeat"><i class="fa fa-retweet"></i></button>
+                        <span class="fs_control_btn fs_vol_icon"><i class="fa fa-volume-up"></i></span>
+                        <span class="fs_control_btn fs_exit_fs"  onclick="toggelFSMode()"><i class="fa fa-arrows-alt"></i></span>
+                    </div>
+
+                    <div class="col_volume">
+                        <div class="volumeController">
+                            <div class="fs_vol_range"><input type="range" value="100" min="0" max="100" /></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-------------/Music Control Box-------------->
+
+            <script src="assets/index.js"></script>
+</body>
+
+</html>

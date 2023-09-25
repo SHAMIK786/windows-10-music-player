@@ -1,0 +1,4 @@
+assets/application/*
+!assets/application/cover_pic
+
+assets/application/cover_pic/*

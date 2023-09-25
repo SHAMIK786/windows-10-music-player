@@ -1,0 +1,94 @@
+/*==== Mobile Phone View ==== */
+/*==width :450px==*/
+@media only screen and (max-width: 450px){
+    .head h1{
+        font-size: 30px;
+    }
+    .tab_itms .itm{
+        width: 20%;
+    }
+
+    .control_box{
+        height: 80px;
+    }
+    .control_box .col{
+        height: 80px;
+        max-width: 60%;
+    }
+    .control_box .col_music_details{
+        width: 60%;
+    }
+    .col_music_details .cover_pic{width: 90px;height: 80px;}
+    .col_music_details .cover_pic img{width: 100%;}
+    .col_music_details .music_title{width: 68%;padding: 10px;padding-left: 15px;}
+    .col_music_details .music_title .title{font-size: 16px; margin-bottom: 10px;}
+    .col_music_details .music_title .artist, .col_music_details .music_title .album{display: none;}
+
+    .control_box .col_controls{width: 38%;}
+    .col_controls .col_itms{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .control_btn{
+        margin: 3px 7px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        outline: none;
+        color: #fff;
+        transition: 0.3s ease;
+    }
+    .btn_extra{
+        display: none;
+    } 
+    .col_controls .duration_box{
+        width: 0%;
+        text-align: center;
+        padding: 0px 0;
+        display: none;
+    }
+    
+    .control_box .col_volumeControl{
+        /* display: none; */
+        width: 0px!important;
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .control_btns .btn_options{
+        display: initial!important;
+        background: none;
+        border: none;
+        margin-left: 10px;
+        color: #fff;
+        outline: none;
+    }
+    .col_volumeControl .options{
+        top: 10px;
+        right: 0px;
+    }
+
+
+    .music_list{
+        width: 85%;
+        margin: 15px auto;
+    }
+    .list_itms{
+        width: 100%;
+        height: 78vh;
+        overflow-y: scroll;
+    }
+    .list_child .child_details .music_title{width: 30%;}
+    .list_child .child_details .music_artist{width: 20%;}
+    .list_child .child_details .music_album{width: 20%;}
+    .list_child .child_details .music_duration{width: 15%;}
+
+
+    .fullScreen_player .play_bar .duration_bar .music_duration .timeSlider{
+        width: 55%;
+        margin: 0px 15px;
+        display: inline-block;
+    }
+}
